@@ -1,21 +1,25 @@
-//variables Primitivas y objetos
+//por valor o por referencia
 
+var a = 10;
+var b = a;
 
-var num = 10;
-var str = "texto";
-var bol = true;
-var und = undefined;
-var nul = null;
+console.log("a: ", a);
+console.log("b: ", b);
 
-var obj = {
-    numero: 10,
-    texto: "Nuevo Texto",
+a = 20;
 
-    objHijo: {
-            bol: true,
-            und: undefined
-    }
-};
+console.log("a: ", a);
+console.log("b: ", b);
 
-console.log(obj);
+var c = {
+    nombre: "Juana"
+}
+var d = c;
 
+console.log("c: ", c);
+console.log("d: ", d);
+
+c.nombre = "Maria";
+
+console.log("c: ", c);
+console.log("d: ", d);
