@@ -1,25 +1,20 @@
-//por valor o por referencia
+//notacion de punto y corchete
 
-var a = 10;
-var b = a;
+var persona = {
+    nombre: "Juana",
+    apellido: "Herrera",
+    edad: 25,
+    direccion: {
+        pais: "Chile",
+        ciudad: "Viña del Mar",
+        edificio: {
+            nombre: "Edificio Principal",
+            telefono: "2222-3333"
+        }
+    }
+};
 
-console.log("a: ", a);
-console.log("b: ", b);
+var campo = "edad";
 
-a = 20;
 
-console.log("a: ", a);
-console.log("b: ", b);
-
-var c = {
-    nombre: "Juana"
-}
-var d = c;
-
-console.log("c: ", c);
-console.log("d: ", d);
-
-c.nombre = "Maria";
-
-console.log("c: ", c);
-console.log("d: ", d);
+console.log(persona[campo]);
