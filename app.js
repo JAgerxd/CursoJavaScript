@@ -1,18 +1,44 @@
-// palabra reservada new
+// Señor de los anillos GAME
 
-function Persona() {
+function Jugador(nombre) {
 
-    this.nombre = "Juan",
-        this.apellido = "Mendoza",
-        this.edad = 30;
+    this.nombre = nombre;
+    this.pv = 100;
+    this.sp = 100;
 
-    //        console.log("Paso por aqui");
+    this.curar = function (jugadorObjetivo) {
 
-    this.nombreCompleto = function () {
-        return this.nombre + " " + this.apellido + " (" + this.edad + ")";
+        if (this.sp >= 40) {
+            this.sp -= 40;
+            jugadorObjetivo.pv += 20;
+        } else {
+            console.log(this.nombre + " " + " No tienes SP");
+        }
+        this.estado(jugadorObjetivo);
     }
+    this.estado = function (jugadorObjetivo) {
+        console.log(this);
+        console.log(jugadorObjetivo);
+    }
+    this.tirarFlecha = function (jugadorObjetivo) {
+
+        if (jugadorObjetivo.pv > 40) {
+            jugadorObjetivo.pv -= 40;
+        } else {
+            jugadorObjetivo.pv = 0;
+            console.error(jugadorObjetivo.nombre + "Murio !!!!");
+
+        }
+
+        this.estado(jugadorObjetivo); 
+    }
+
 }
 
-var juan = new Persona();
+var gandalf = new Jugador("Gandalf")
+var legolas = new Jugador("Legolas")
 
-console.log(juan);
+console.log(gandalf);
+console.log(legolas);
+
+gandalf.curar(legolas);
