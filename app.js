@@ -1,19 +1,33 @@
-// funciones de primera clase
+// metodo y objeto this
 
-function a(){
+var nombre = "Juan Carlos";
 
-console.log("funcion a");
+var persona = {
 
-}
+    nombre: "Maria",
+    apellido: "Dubon",
+    imprimirNombre: function () {
 
-a();
 
-a.nombre = "Maria";
-a.direccion = {
-    pais: "Costa Rica",
-    ciudad: "San Jose",
-    edificio: {
-        piso: "8vo",
-        nombre: "Edificio principal"
+        console.log(this.nombre + " " + this.apellido);
+    },
+    direccion: {
+        pais: "Costa Rica",
+        obtenerPais: function () {
+
+            var self = this;
+
+
+            var nuevaDireccion = function () {
+                console.log(self);
+                console.log("La direccion es en " + self.pais);
+            }
+
+            nuevaDireccion();
+        }
     }
-}
+};
+
+persona.imprimirNombre();
+persona.direccion.obtenerPais();
+
