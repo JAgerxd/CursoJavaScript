@@ -1,40 +1,27 @@
-//funciones
+//funciones anonima y explicita
 
-function imprimir(persona /* , apellido */) {
-
-    console.log(persona.nombre + " " + persona.apellido);
-
-    persona.nombre ="Maria";
-
-    // apellido = apellido || "xxx"  //Forma 2
-
-    /*if( apellido === undefined){  Forma 1
-        apellido = "xxx";
-    }*/
-
-
-    //console.log(nombre + " " + apellido);
+function imprimir(fn) {
+    fn();
 
 }
 
-var obj = {
 
+var persona = {
     nombre: "Juan",
     apellido: "Padilla"
 
 }
 
-// variable explicita 
-// var nombre = "Juan";
+var miFuncion = function(){
+    console.log("miFuncion");
 
-/*
-imprimir({
+}
 
-    nombre: "Juan",
-    apellido: "Padilla"
+imprimir(miFuncion);
 
-}); //variable anonima */
 
-imprimir(obj);
 
-console.log(obj);
+/*imprimir(function () {
+
+    console.log("funcion anonima");
+});*/
