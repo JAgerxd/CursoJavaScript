@@ -1,33 +1,18 @@
-// metodo y objeto this
+// palabra reservada new
 
-var nombre = "Juan Carlos";
+function Persona() {
 
-var persona = {
+    this.nombre = "Juan",
+        this.apellido = "Mendoza",
+        this.edad = 30;
 
-    nombre: "Maria",
-    apellido: "Dubon",
-    imprimirNombre: function () {
+    //        console.log("Paso por aqui");
 
-
-        console.log(this.nombre + " " + this.apellido);
-    },
-    direccion: {
-        pais: "Costa Rica",
-        obtenerPais: function () {
-
-            var self = this;
-
-
-            var nuevaDireccion = function () {
-                console.log(self);
-                console.log("La direccion es en " + self.pais);
-            }
-
-            nuevaDireccion();
-        }
+    this.nombreCompleto = function () {
+        return this.nombre + " " + this.apellido + " (" + this.edad + ")";
     }
-};
+}
 
-persona.imprimirNombre();
-persona.direccion.obtenerPais();
+var juan = new Persona();
 
+console.log(juan);
