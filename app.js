@@ -1,27 +1,38 @@
-// prototipos de JAvaScript
-
-function Persona() {
-    this.nombre = "Fernando";
-    this.apellido = "Herrera";
-    this.edad = 30;
-    this.pais = "Costa Rica";
+// Funciones Anonimas
+/* Ejemplo 1
 
 
-}
+(function () {
 
-Persona.prototype.imprimirInfo = function () {
-    console.log(this.nombre + " " + this.apellido + " (" + this.edad + ")");
-}
+    var a = 10;
+    console.log(a);
 
-var fer = new Persona();
+    function cambiarA() {
+        a = 20;
+    }
 
-Number.prototype.esPositivo = function () {
+    cambiarA();
+    console.log(a);
 
-    if (this > 0) {
+}());
+ */
+
+
+function ejecutarFuncion(fn) {
+    if (fn() === 1) {
         return true;
     } else {
         return false;
     }
-}
+
+};
+
+console.log(ejecutarFuncion(function () {
+    console.log("Funcion Anonima ejecutada");
+    return 1;
+}));
+
+
+
 
 
